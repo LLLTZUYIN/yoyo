@@ -16,7 +16,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    homepage = "<h1>林姿穎Python網頁1121</h1>"
+    homepage = "<h1>林姿穎Python網頁1128</h1>"
     homepage += "<a href=/mis>MIS</a><br>"
     homepage += "<a href=/today>顯示日期時間</a><br>"
     homepage += "<a href=/welcome?nick=林姿穎>傳送使用者暱稱</a><br>"
@@ -171,6 +171,8 @@ def search():
 def searchQ():
     if request.method == "POST":
         MovieTitle = request.form["MovieTitle"]
+        result = "您輸入的關鍵字是：" + MovieTitle
+
         info = ""
         db = firestore.client()     
         collection_ref = db.collection("電影")
