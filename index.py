@@ -27,7 +27,7 @@ def index():
     homepage += "<a href=/query>書名查詢</a><br>"
     homepage += "<a href=/spider>網路爬蟲抓取子青老師課程</a><br>"
     homepage += "<br><a href=/movie>讀取開眼電影即將上映影片，寫入Firestore</a><br>"
-    homepage += "<br><a href=/search>查詢開眼電影即將上映影片</a><br>"
+    homepage += "<br><a href=/searchQ>查詢開眼電影即將上映影片</a><br>"
     homepage += "<br><a href=/movie_rate>讀取開眼電影即將上映影片(含分級資訊)，寫入Firestore</a><br>"
     return homepage
 
@@ -242,6 +242,6 @@ def movie_rate():
         doc_ref = db.collection("電影含分級").document(movie_id)
         doc_ref.set(doc)
     return "近期上映電影已爬蟲及存檔完畢，網站最近更新日期為：" + lastUpdate
-    
+
 if __name__ == "__main__":
     app.run(debug=True)
